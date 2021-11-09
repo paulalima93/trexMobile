@@ -72,13 +72,13 @@ function setup(){
   trex.x=40;
   
   //objeto chão do game
-  chao = createSprite(300,180,600,20);
+  chao = createSprite(width/2,height-20,width,20);
   chao.addImage("chão", imagemdochao);
   chao.x = chao.width/2;
   
   
   //objeto chão invisivel
-  chaoinvisivel = createSprite (width/2,height-10,width,125);
+  chaoinvisivel = createSprite (width/2,height-10,width,10);
   chaoinvisivel.visible = false;
   
   //cria os limites da tela
@@ -143,7 +143,7 @@ function draw(){
          } 
     
      //condição para o dino poder pular, apenas se apertar o espaço e estiver no chão  
-     if(touches.lenght>0 || keyDown("space")&& trex.y >=160){
+     if(touches.length > 0 && trex.y > height- 100){
         trex.velocityY = -10;
         somSalto.play();
         touches = [];
@@ -219,7 +219,7 @@ function gerarNuvens(){
     //adiciona a imagem carregada no preload
     nuvem.addImage(imagemdanuvem);
     //gera uma posição Y aleatória para a nuvem
-    nuvem.y = Math.round(random(20,90));
+    nuvem.y = Math.round(random(height-100,height-300));
     //diminui o tamanho da nuvem
     nuvem.scale = 0.4;
     //dá velocidade a nuvem
@@ -242,7 +242,7 @@ function gerarNuvens(){
 
 function gerarObstaculos(){
   if (frameCount % 100 ===0){
-    var obstaculo = createSprite(600,165,10,40);
+    var obstaculo = createSprite(600,height-30,10,40);
     //obstaculo.velocityX=-(3 + pontuacao/500);
    
     //switch case vai gerar obstaculos aleatorios 
