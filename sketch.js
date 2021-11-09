@@ -215,7 +215,7 @@ function gerarNuvens(){
   //se o resto da divisão do frame atual por 60 for igual a 0;       desenha a nuvem na tela
   if(frameCount % 60 === 0) {
     //cria sprite nuvem
-    nuvem = createSprite(600,100,40,10);
+    nuvem = createSprite(windowWidth,100,40,10);
     //adiciona a imagem carregada no preload
     nuvem.addImage(imagemdanuvem);
     //gera uma posição Y aleatória para a nuvem
@@ -242,7 +242,7 @@ function gerarNuvens(){
 
 function gerarObstaculos(){
   if (frameCount % 100 ===0){
-    var obstaculo = createSprite(600,height-30,10,40);
+    var obstaculo = createSprite(windowWidth,height-30,10,40);
     //obstaculo.velocityX=-(3 + pontuacao/500);
    
     //switch case vai gerar obstaculos aleatorios 
