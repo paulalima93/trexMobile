@@ -189,6 +189,11 @@ function draw(){
               console.log("reiniciar o jogo");
               reset();
           }
+      
+      if(touches.length>0 || keyDown("SPACE")) {      
+          reset();
+           touches = []
+         }
 
           } //---------------FIM MODO JOGO ENCERRAR ----------------
   
